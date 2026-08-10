@@ -7,6 +7,5 @@ class Solution(object):
         count = 0
         for i in range(d,l-d):
             sum += arr[i]
-            count += 1
-        count = float(str(count)+".00000")
+            count += 1.00
         return sum/count
