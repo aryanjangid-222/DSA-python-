@@ -1,15 +1,9 @@
 class Solution(object):
     def finalValueAfterOperations(self, operations):
-        a = 0
-        b = 0
-        for el in operations:
-            if el=="--X" or el=="X--":
-                b += 1
+        x = 0
+        for i in operations:
+            if i[1]=='-':
+                x=x-1
             else:
-                a += 1
-        if a==b:
-            return 0
-        elif a>b:
-            return a-b
-        else:
-            return -(b-a)
+                x=x+1
+        return x
