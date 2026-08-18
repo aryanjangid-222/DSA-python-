@@ -1,7 +1,8 @@
 class Solution(object):
     def findLucky(self, arr):
         ch = list(set(arr))
-        for el in ch[::-1]:
+        a = -1
+        for el in ch:
             if arr.count(el)==el:
-                return el
-        return -1
+                a = el
+        return a
