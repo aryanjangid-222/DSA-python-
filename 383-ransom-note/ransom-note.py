@@ -1,7 +1,7 @@
 class Solution(object):
     def canConstruct(self, ransomNote, magazine):
-        for el in ransomNote:
+        char = "abcdefghijklmnopqrstuvwxyz"
+        for el in char:
             if ransomNote.count(el)>magazine.count(el):
                 return False
-        else:
-            return True
+        return True
