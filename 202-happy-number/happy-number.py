@@ -3,7 +3,7 @@ class Solution(object):
         c = 0
         while True:
             c += 1
-            if c==9:
+            if c==8:
                 return False
             if n==1:
                 return True
