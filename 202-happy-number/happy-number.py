@@ -3,7 +3,7 @@ class Solution(object):
         c = 0
         while True:
             c += 1
-            if c==20:
+            if c==12:
                 return False
             if n==1:
                 return True
