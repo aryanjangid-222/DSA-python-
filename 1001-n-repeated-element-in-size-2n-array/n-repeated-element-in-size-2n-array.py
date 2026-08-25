@@ -1,7 +1,8 @@
 class Solution(object):
     def repeatedNTimes(self, nums):
         n = len(nums)/2
-        for el in nums:
+        num = list(set(nums))
+        for el in num:
             if nums.count(el)==n:
                 return el
         
