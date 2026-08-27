@@ -1,15 +1,13 @@
 class Solution(object):
     def isHappy(self, n):
-        c = 0
-        while True:
-            c += 1
-            if c==8:
+        check = []
+        while n!=1:
+            check.append(n)
+            s = 0
+            while n!=0:
+                s += (n%10)**2
+                n = n//10
+            n = s
+            if n in check:
                 return False
-            if n==1:
-                return True
-            a = str(n)
-            n = 0
-            for el in a:
-                n += int(el)**2
-            if n == 1:
-                return True
+        return True
