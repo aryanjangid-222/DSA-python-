@@ -4,12 +4,11 @@ class Solution(object):
         s1 = 0
         for el in nums:
             s += el
-        i = -1
-        for el in nums:
-            i += 1
-            s -= el
+
+        for i in range(len(nums)):
+            s -= nums[i]
             if s1==s:
                 return i
-            s1 += el
+            s1 += nums[i]
         return -1
         
