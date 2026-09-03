@@ -5,14 +5,12 @@ class Solution(object):
             if el < 10:
                 s += el
                 continue
-            el = str(el)
-            l = len(el)
+            l = len(str(el))
             m = 0
-            for i in el:
-                if int(i)>m:
-                    m = int(i)
-            n = str(m)*l
-            s += int(n)
+            while el != 0:
+                n = el % 10
+                if n > m:
+                    m = n
+                el = el//10
+            s += int(str(m)*l)
         return s
-
-        
