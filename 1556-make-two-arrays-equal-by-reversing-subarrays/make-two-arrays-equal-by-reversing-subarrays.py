@@ -1,8 +1,8 @@
 class Solution(object):
     def canBeEqual(self, target, arr):
-        for el in target:
-            if target.count(el) == arr.count(el):
-                continue
-            else:
+        target.sort()
+        arr.sort()
+        for i in range(len(target)):
+            if target[i] != arr[i]:
                 return False
         return True
