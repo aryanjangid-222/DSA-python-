@@ -1,6 +1,12 @@
 class Solution(object):
     def findMiddleIndex(self, nums):
-        for i in range(len(nums)):
-            if sum(nums[:i]) == sum(nums[i+1:]):
+        right = sum(nums) - nums[0]
+        left = 0
+        l = len(nums)
+        for i in range(l-1):
+            if left == right:
                 return i
-        return -1
+            left += nums[i]
+            right -= nums[i+1]
+        
+        return -1 if left != 0 else l-1
