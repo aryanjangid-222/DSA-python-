@@ -3,12 +3,12 @@ class Solution(object):
         out = []
         if m*n != len(original):
             return []
-        c = -1
-        for j in range(m):
-            li = []
-            for i in range(n):
-                c += 1
-                li.append(original[c])
-            out.append(li)
-        
+        curr = 0
+        nex = n
+        for i in range(m):
+            out.append(original[curr:nex])
+            curr += n
+            nex += n
+        return out
+
         return out
