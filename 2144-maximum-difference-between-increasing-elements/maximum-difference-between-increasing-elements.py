@@ -2,10 +2,10 @@ class Solution(object):
     def maximumDifference(self, nums):
         l = len(nums)
         m = -1
+        mi = max(nums)
         for i in range(l-1):
-            for j in range(i+1,l):
-                d = nums[j] - nums[i]
-                if m < d and d != 0:
-                    m = d
-
-        return m
+            mi = min(mi,nums[i])
+            diff = nums[i+1] - mi
+            m = max(m,diff)
+        
+        return m if m > 0 else -1
