@@ -1,15 +1,16 @@
 class Solution(object):
     def pivotArray(self, nums, pivot):
-        out = []
+        first = []
+        second = []
+        third = []
         for el in nums:
             if el < pivot :
-                out.append(el)
+                first.append(el)
+                continue
+            elif el == pivot:
+                second.append(el)
+                continue
+            else:
+                third.append(el)
         
-        for i in range(nums.count(pivot)):
-            out.append(pivot)
-        
-        for el in nums:
-            if el > pivot:
-                out.append(el) 
-               
-        return out
+        return first + second + third    
