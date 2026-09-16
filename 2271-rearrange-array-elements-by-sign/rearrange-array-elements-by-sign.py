@@ -8,15 +8,8 @@ class Solution(object):
                 pos.append(el)
             else:
                 neg.append(el)
-        
-        p = 0
-        n = 0
-        for i in range(len(nums)):
-            if p == n:
-                out.append(pos[i-p])
-                n += 1
-            else:
-                out.append(neg[i-n])
-                p += 1
-        
+        for i in range(len(neg)):
+            out.append(pos[i])
+            out.append(neg[i])
+            
         return out
