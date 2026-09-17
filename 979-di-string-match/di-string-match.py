@@ -15,6 +15,7 @@ class Solution(object):
                 c = el
         if c == "I":
             out.append(i)
-        else:
-            out.append(d)
+            return out
+        
+        out.append(d)
         return out
