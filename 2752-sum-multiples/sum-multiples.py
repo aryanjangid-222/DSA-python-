@@ -13,5 +13,3 @@ class Solution(object):
                 s += el
 
         return s
-        
-        
