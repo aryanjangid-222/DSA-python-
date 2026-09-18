@@ -1,9 +1,8 @@
 class Solution(object):
     def pivotInteger(self, n):
-        check = range(1,n+1)
-        s = sum(check)
+        s = sum(range(1,n+1))
         rs = 0
-        for el in check:
+        for el in range(1,n+1):
             rs += el
             if rs == s:
                 return el
