@@ -12,7 +12,6 @@ class Solution(object):
                     b = (1*(10**c)) + b
                 else:
                     n /= 2
-                    b = (0*(10**c)) + b
             n = 0
             while b != 0:
                 if b % 10 == 1:
