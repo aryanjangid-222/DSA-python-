@@ -2,6 +2,8 @@ class Solution(object):
     def reverseDegree(self, s):
         a = "1zyxwvutsrqponmlkjihgfedcba"
         su = 0
-        for i in range(len(s)):
-            su += a.index(s[i])*(i+1)
+        i = 0
+        for el in s:
+            i += 1
+            su += a.index(el)*i
         return su
