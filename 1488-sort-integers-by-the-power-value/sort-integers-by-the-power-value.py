@@ -13,5 +13,5 @@ class Solution(object):
                     p += 1
                     el /= 2
             check.append(p)
-        out = zip(*sorted(zip(check, elem)))
-        return out[1][k-1]
+        fir,out = zip(*sorted(zip(check, elem)))
+        return out[k-1]
