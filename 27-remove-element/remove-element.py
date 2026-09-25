@@ -1,10 +1,5 @@
 class Solution(object):
     def removeElement(self, nums, val):
-        i = 0
-        check = nums
-        for el in check:
-            if el == val:
-                continue
-            nums[i] = el
-            i += 1
-        return i
+        for i in range(nums.count(val)):
+            nums.remove(val)
+        return len(nums)
