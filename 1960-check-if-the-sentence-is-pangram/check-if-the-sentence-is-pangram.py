@@ -1,4 +1,3 @@
 class Solution(object):
     def checkIfPangram(self, sentence):
-        check = list(set(sentence))
-        return len(check) == 26
+        return len(list(set(sentence))) == 26
