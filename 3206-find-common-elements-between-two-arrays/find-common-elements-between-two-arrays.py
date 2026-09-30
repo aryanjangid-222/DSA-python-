@@ -1,11 +1,13 @@
 class Solution(object):
     def findIntersectionValues(self, nums1, nums2):
-        ans1 = 0
-        ans2 = 0
+        num1 = list(set(nums1))
+        num2 = list(set(nums2))
+        first = 0
+        second = 0
         for el in nums1:
-            if el in nums2:
-                ans1 += 1
+            if el in num2:
+                first += 1
         for el in nums2:
-            if el in nums1:
-                ans2 += 1
-        return [ans1,ans2]
+            if el in num1:
+                second += 1
+        return [first, second]
