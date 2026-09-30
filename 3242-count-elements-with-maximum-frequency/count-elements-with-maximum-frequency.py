@@ -1,11 +1,15 @@
 class Solution(object):
     def maxFrequencyElements(self, nums):
-        check = []
         li = list(set(nums))
         if len(li) == len(nums):
             return len(nums)
+        ma = 0
+        coun = 0
         for el in li:
-            check.append(nums.count(el))
-        m = max(check)
-        return m * check.count(m)
-        
+            c = nums.count(el)
+            if c > ma:
+                ma = c
+                coun = 1
+            elif c == ma:
+                coun += 1
+        return ma * coun        
