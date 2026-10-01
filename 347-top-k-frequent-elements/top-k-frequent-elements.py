@@ -3,9 +3,9 @@ class Solution(object):
         check = {}
         li = list(set(nums))
         for el in li:
-            check[el] = nums.count(el)
-        sorted_keys = sorted(check, key=check.get)
-        l = len(sorted_keys)
-        return sorted_keys[l-k:]
+            check[el] = 0
+        for el in nums:
+            check[el] += 1 
+        return sorted(check, key=check.get, reverse=True)[:k]
         
         
