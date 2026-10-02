@@ -1,18 +1,22 @@
 class Solution(object):
     def reverse(self, x):
-        if x == 0:
+        if x > 0:
+            isneg = False
+        elif x < 0:
+            isneg = True
+            x = -x
+        else:
             return 0
         while x % 10 == 0:
             x /= 10
-        neg = False
-        if x < 0:
-            neg = True
-            x = -x
-        res = int(str(x)[::-1])
-        if neg:
-            res = -res
-        if res > 2147483647:
+        res = 0
+        while x != 0:
+            res = res*10 + x%10
+            x //= 10
+        if isneg and res > 2147483648:
             return 0
-        elif res < -2147483648:
+        elif isneg:
+            return -res
+        elif res > 2147483647:
             return 0
         return res
