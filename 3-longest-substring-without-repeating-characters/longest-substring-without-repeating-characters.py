@@ -7,7 +7,7 @@ class Solution(object):
                 l = len(seen)
                 if l > ma:
                     ma = l
-                seen = seen[seen.index(el) + 1:l]
+                seen = seen[seen.index(el) + 1:]
                 seen.append(el)
             else:
                 seen.append(el)
