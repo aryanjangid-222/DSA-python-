@@ -1,18 +1,12 @@
 class Solution(object):
     def maxProfit(self, prices):
-        mi1 = prices[0]
-        ind = 0
-        for i,el in enumerate(prices):
-            if el < mi1:
-                mi1 = el
-                ind = i
-        ma1 = max(prices[ind:])
-        res1 = ma1 - mi1
-        check = prices[0:ind]
-        l = len(check)
-        res2 = 0
-        for i in range(l):
-            res = max(check[i:]) - check[i]
-            if res > res2:
-                res2 = res
-        return res1 if res1 > res2 else res2
+        if len(prices) == 1:
+            return 0
+        min_price = prices[0]
+        max_profit = prices[1] - prices[0]
+        for el in prices:
+            if el < min_price:
+                min_price = el
+            elif el - min_price > max_profit:
+                max_profit = el - min_price
+        return max_profit
