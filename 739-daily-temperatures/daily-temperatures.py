@@ -1,12 +1,11 @@
 class Solution(object):
     def dailyTemperatures(self, temp):
-        res = []
         l = len(temp)
+        res = [0] * l
         check = [l-1]
         for j in range(l-1,-1,-1):
             if temp[j] >= temp[check[0]]:
                 check = [j]
-                res.append(0)
                 continue
             else:
                 left = -1
@@ -16,7 +15,7 @@ class Solution(object):
                 check.append(j)
                 for el in check[::-1]:
                     if temp[j] < temp[el]:
-                        res.append(el-j)
+                        res[j] = el-j
                         break
         
-        return res[::-1]
+        return res
